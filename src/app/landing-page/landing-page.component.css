@@ -1,0 +1,82 @@
+.project-members {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  justify-content: space-around;
+}
+.project-list {
+  height: 100%;
+  width: 45%;
+  overflow-y: scroll;
+}
+.project-team {
+  height: 100%;
+  width: 45%;
+  overflow-y: scroll;
+}
+.project-list::-webkit-scrollbar,
+.employee-table::-webkit-scrollbar,
+.project-team::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+table {
+  width: 100%;
+  overflow-y: scroll;
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+}
+caption {
+  padding: 10px;
+  font-weight: bold;
+  color: rgb(41, 190, 86);
+}
+.employee-list {
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+  justify-content: space-around;
+}
+.employee-table {
+  height: 100%;
+  width: 55%;
+  overflow-y: scroll;
+}
+.project-assign {
+  height: 100%;
+  width: 35%;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+select {
+  width: 80%;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  padding: 2px 5px;
+}
+.project-assign-button {
+  margin: 30px 10px;
+  width: 25%;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 15%;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.project-assign-button:hover {
+  background-color: rgb(51, 214, 36);
+}

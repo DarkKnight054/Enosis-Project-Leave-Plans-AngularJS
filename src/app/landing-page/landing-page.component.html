@@ -1,0 +1,119 @@
+<div class="main">
+  <h3 style="text-align: center; padding: 1rem">
+    Assigned Projects and Team Members
+  </h3>
+  <div class="project-members">
+    <div class="project-list">
+      <table>
+        <caption>
+          Enosis Project List
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Project ID</th>
+            <th scope="col">Project Name</th>
+            <th scope="col">Project Status</th>
+            <th scope="col">Project Deadline</th>
+          </tr>
+        </thead>
+        <tbody style="overflow-y: scroll">
+          <tr
+            *ngFor="let project of projectList"
+            (click)="onClick(project.projectId)"
+            style="cursor: pointer"
+          >
+            <td>{{ project.projectId }}</td>
+            <td>{{ project.projectName }}</td>
+            <td>{{ project.projectStatus }}</td>
+            <td>{{ project.projectDeadline }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="project-team">
+      <table>
+        <caption>
+          Project
+          <span style="font-style: italic; font-weight: bolder">{{
+            projectTeamMembers
+          }}</span>
+          Team Members
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Employee ID</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Employee Role</th>
+            <th scope="col">Leave From</th>
+            <th scope="col">Leave To</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let member of team">
+            <td>{{ member.empId }}</td>
+            <td>{{ member.empName }}</td>
+            <td>{{ member.empRole }}</td>
+            <td>{{ member.leaveFrom }}</td>
+            <td>{{ member.leaveTo }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3 style="text-align: center; padding: 1rem; color: blueviolet">
+    Employee List and Project Assigning
+  </h3>
+  <div class="employee-list">
+    <div class="employee-table">
+      <table>
+        <caption>
+          Employee List
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Employee ID</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Employee Role</th>
+            <th scope="col">Assigned Projects</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of employeeList">
+            <td>{{ emp.empId }}</td>
+            <td>{{ emp.empName }}</td>
+            <td>{{ emp.empRole }}</td>
+            <td>{{ emp.assignedProjects }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="project-assign">
+      <div
+        style="
+          padding: 10px;
+          font-weight: bold;
+          color: rgb(41, 190, 86);
+          font-family: sans-serif;
+          font-size: 0.8rem;
+          letter-spacing: 1px;
+          padding: 12px 0px;
+        "
+      >
+        Project Assignment
+      </div>
+      <h4>Select a project</h4>
+      <select matNativeControl required [(ngModel)]="selectedProjectId">
+        <option *ngFor="let project of projectList" [value]="project.projectId">
+          {{ project.projectName }}
+        </option>
+      </select>
+      <h4>Select an employee</h4>
+      <select matNativeControl required [(ngModel)]="selectedEmployeeId">
+        <option *ngFor="let emp of employeeList" [value]="emp.empId">
+          Employee Id: {{ emp.empId }}, Employee Name: {{ emp.empName }}
+        </option>
+      </select>
+      <div class="project-assign-button">Assign</div>
+    </div>
+  </div>
+</div>
